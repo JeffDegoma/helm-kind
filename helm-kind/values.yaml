@@ -1,0 +1,4 @@
+deployment:
+    image: "abe_legal"
+    tag: "latest"
+name: "abe-legal"

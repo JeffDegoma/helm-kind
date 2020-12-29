@@ -1,0 +1,27 @@
+# these have been copied into helm-kind/templates directory
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: abe-legal
+        imagePullPolicy: Never
+        image: abe_legal:latest
+        ports:
+          - containerPort: 80
+        resources:
+          limits:
+            cpu: 10m
+            memory: 20Mi
+          requests:
+            cpu: 10m
+            memory: 20M
