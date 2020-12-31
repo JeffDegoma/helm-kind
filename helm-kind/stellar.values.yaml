@@ -1,0 +1,5 @@
+deployment:
+    image: "stellar_login_client"
+    tag: "latest"
+name: "stellar-service"
+nodePort: 30000
