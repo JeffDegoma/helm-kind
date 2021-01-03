@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd-config
+  namespace: fluentd
+data:
+  fluentd.conf: |-
+    @include pods-kind-test-fluent.conf
+  pods-kind-test-fluent.conf: |-
+    <source>
+      @type tail
+      read_from_head true
+      
+    </source>

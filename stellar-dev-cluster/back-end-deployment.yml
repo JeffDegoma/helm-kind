@@ -1,0 +1,27 @@
+# these have been copied into helm-kind/templates directory
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+spec:
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: stellar-login-server
+        image: stellar_login_server:latest
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 3000
+        resources:
+          limits:
+            cpu: 10m
+            memory: 20Mi
+          requests:
+            cpu: 10m
+            memory: 20M
